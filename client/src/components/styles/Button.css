@@ -1,0 +1,16 @@
+.btn-login {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin: 7px;
+  width: 100%;
+  color: white;
+  background-color: rgb(107, 109, 235);
+  border-radius: 3px;
+  font-size: 2rem;
+}
+.btn-login:hover {
+  color: rgb(107, 109, 235);
+  background-color: white;
+  border: 1px solid rgb(107, 109, 235);
+}

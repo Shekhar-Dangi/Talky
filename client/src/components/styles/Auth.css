@@ -1,0 +1,47 @@
+.auth_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  color: white;
+}
+.auth_top h1, .auth_top i{
+  font-size: 3rem;
+}
+.auth_mid {
+  width: 50%;
+  margin: 0 auto 50px auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 3px;
+}
+.inputForm {
+  width: 100%;
+  margin: 7px;
+  padding: 7px;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 3px;
+  font-size: 2rem;
+}
+.auth_bottom{
+  width: 50%;
+  margin: auto;
+  color: white;
+  cursor: pointer;
+}
+
+.identifier{
+  font-size: 2rem;
+  text-align: center;
+}
+.identifier strong{
+  font-size: 2rem;
+}
+.identifier:hover{
+  color: rgb(107, 109, 235);
+  background-color: white;
+  border: 1px solid rgb(107, 109, 235);
+  border-radius: 6px;
+}
