@@ -11,10 +11,16 @@ const multerStorage = multer.diskStorage({
 });
 
 const multerFilter = (req, file, cb) => {
-  if (file.mimetype.split("/")[1] === "jpeg") {
+  if (
+    file.mimetype.split("/")[1] === "jpeg" ||
+    file.mimetype.split("/")[1] === "png" ||
+    file.mimetype.split("/")[1] === "jpg"
+  ) {
     cb(null, true);
   } else {
-    cb(new Error("Not a PDF File!!"), false);
+    const e = new Error("File type not suppported!");
+    e.status = 401;
+    cb(e, false);
   }
 };
 

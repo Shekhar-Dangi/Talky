@@ -23,7 +23,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/public`));
 
-
 // Connecting to DB
 mongoose.connect(
   process.env.CONNECTION_URI,
@@ -35,6 +34,10 @@ mongoose.connect(
     console.log("MongoDB Connected!");
   }
 );
+function errorHandler(err, req, res, next) {
+  console.log(err.status);
+  res.status(err.status).send({ message: err.message });
+}
 
 app.use("/auth", auth);
 app.use("/user", user);
@@ -43,6 +46,7 @@ app.use("/message", message);
 app.get("/", (req, res) => {
   res.send("Hello beta!");
 });
+app.use(errorHandler);
 
 // SOCKET IO
 const io = socketIo(server, {
